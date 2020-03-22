@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wly</groupId>
+    <artifactId>foodie-dev</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!---
+         1、聚合工程分为父工程和子工程、相当于继承关系、子工程在maven里面称之为模块（module）、模块之间平级可以互相依赖
+         2、子模块可以使用父工程所有资源（依赖）、子模块之间要使用资源需要构建依赖
+         3、一个顶级工程可以由不同的子工程共同组合而成
+     -->
+    <!-- 子工程 ： new 一个 module 的时候idea会自动增加这个标签-->
+    <modules>
+        <module>foodie-dev-common</module>
+        <module>foodie-dev-pojo</module>
+        <module>foodie-dev-mapper</module>
+        <module>foodie-dev-service</module>
+        <module>foodie-dev-api</module>
+    </modules>
+
+
+    <!-- pom父类型都为pom类型、jar内部调用或者是作服务使用、war需要部署的项目
+    -->
+    <packaging>pom</packaging>
+
+    <!-- 引入依赖parent -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.5.RELEASE</version>
+        <relativePath />
+    </parent>
+
+</project>
