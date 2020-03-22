@@ -13,7 +13,7 @@
          2、子模块可以使用父工程所有资源（依赖）、子模块之间要使用资源需要构建依赖
          3、一个顶级工程可以由不同的子工程共同组合而成
      -->
-    <!-- 子工程 ： new 一个 module 的时候idea会自动增加这个标签-->
+    <!-- 子工程 ： new 一个 module 的时候idea会自动增加这个标签 -->
     <modules>
         <module>foodie-dev-common</module>
         <module>foodie-dev-pojo</module>
@@ -23,8 +23,7 @@
     </modules>
 
 
-    <!-- pom父类型都为pom类型、jar内部调用或者是作服务使用、war需要部署的项目
-    -->
+    <!-- pom父类型都为pom类型、jar内部调用或者是作服务使用、war需要部署的项目 -->
     <packaging>pom</packaging>
 
     <!-- 引入依赖parent -->
@@ -34,5 +33,37 @@
         <version>2.1.5.RELEASE</version>
         <relativePath />
     </parent>
+
+    <!-- 资源属性 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <!-- 依赖包 -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <!-- 排除boot自带的日志包 -->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 
 </project>
