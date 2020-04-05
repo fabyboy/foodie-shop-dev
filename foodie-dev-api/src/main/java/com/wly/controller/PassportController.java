@@ -26,6 +26,12 @@ public class PassportController {
     @Autowired
     private UserService userService;
 
+    /**
+     * 清空不必暴露的参数
+     *
+     * @author wangliyong
+     * @date 2020/4/5
+     */
     private Users setNullProperty(Users userResult) {
         userResult.setPassword(null);
         userResult.setMobile(null);

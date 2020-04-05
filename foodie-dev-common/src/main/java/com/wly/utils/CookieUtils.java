@@ -17,14 +17,14 @@ import java.net.URLEncoder;
  * @Package com.wly.utils
  * @Description: Cookie 工具类
  * Copyright: Copyright (c)
- * Company: www.imooc.com
+ * Company: www.wly.com
  *
- * @author imooc
+ * @author 慕课网
  * @version V1.0
  */
 public final class CookieUtils {
 
-    final static Logger logger = LoggerFactory.getLogger(CookieUtils.class);
+    final static Logger LOGGER = LoggerFactory.getLogger(CookieUtils.class);
 	
 	/**
 	 * 
@@ -207,7 +207,7 @@ public final class CookieUtils {
                 cookie.setMaxAge(cookieMaxage);
             if (null != request) {// 设置域名的cookie
             	String domainName = getDomainName(request);
-                logger.info("========== domainName: {} ==========", domainName);
+                LOGGER.info("========== domainName: {} ==========", domainName);
                 if (!"localhost".equals(domainName)) {
                 	cookie.setDomain(domainName);
                 }
@@ -242,7 +242,7 @@ public final class CookieUtils {
                 cookie.setMaxAge(cookieMaxage);
             if (null != request) {// 设置域名的cookie
             	String domainName = getDomainName(request);
-                logger.info("========== domainName: {} ==========", domainName);
+                LOGGER.info("========== domainName: {} ==========", domainName);
                 if (!"localhost".equals(domainName)) {
                 	cookie.setDomain(domainName);
                 }
