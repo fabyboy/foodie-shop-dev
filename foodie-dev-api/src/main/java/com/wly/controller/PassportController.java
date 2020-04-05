@@ -6,6 +6,8 @@ import com.wly.utils.CookieUtils;
 import com.wly.utils.JSONResult;
 import com.wly.service.UserService;
 import com.wly.utils.JsonUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  * @date 2020/4/2
  * @return
  */
+@Api(value = "注册登录", tags = {"用于注册登录的相关接口"})
 @RestController
 @RequestMapping("passport")
 public class PassportController {
@@ -48,6 +51,7 @@ public class PassportController {
      * @author wangliyong
      * @date 2020/4/2
      */
+    @ApiOperation(value = "用户名是否存在",notes = "用户名是否存在",httpMethod = "GET")
     @GetMapping("usernameIsExist")
     public JSONResult usernameIsExist(@RequestParam String username) {
         // 1.判断用户名不能为空
@@ -69,6 +73,7 @@ public class PassportController {
      * @author wangliyong
      * @date 2020/4/5
      */
+    @ApiOperation(value = "用户注册",notes = "用户注册",httpMethod = "POST")
     @PostMapping("/regist")
     public JSONResult regist(@RequestBody UserBO userBO,
                              HttpServletRequest request,
