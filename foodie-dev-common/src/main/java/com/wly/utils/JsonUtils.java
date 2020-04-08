@@ -12,7 +12,7 @@ import java.util.List;
  * @Package com.wly.utils
  * @Description: json转换类
  * Copyright: Copyright (c)
- * Company: www.imooc.com
+ * Company: www.wly.com
  * 
  * @author imooc
  */
