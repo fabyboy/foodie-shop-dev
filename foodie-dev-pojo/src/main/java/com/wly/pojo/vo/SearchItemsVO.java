@@ -1,5 +1,7 @@
 package com.wly.pojo.vo;
 
+import java.util.Date;
+
 /**
  * 用于展示商品搜索列表结果的VO
  */
